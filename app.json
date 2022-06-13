@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "PR_Progress",
+    "name": "Native Navigator with NativeBase TabBar",
     "slug": "PR_Progress",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -28,6 +28,7 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "Demo of Native Navigator rendered as a Nativebase component. This allows for one context provider for dark mode. "
   }
 }
