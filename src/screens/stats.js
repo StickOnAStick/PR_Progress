@@ -1,5 +1,5 @@
 import { Box, Button, Input, Text, useColorModeValue, useTheme } from "native-base";
-import { LineChart } from "react-native-chart-kit";
+import { BarChart } from "react-native-chart-kit";
 import { Dimensions, View } from "react-native";
 import React, { useState } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -74,9 +74,9 @@ const Stats = () => {
     return(
         <Box bg={useColorModeValue(colors.lightPrimary[100], colors.darkPrimary[100])} h="full" safeArea>
             <Text _dark={{colors: '#000' }} pt="3" fontWeight="black" fontSize="2xl">This is the stats menu</Text>
-            <LineChart
+            <BarChart
                 data={{
-                labels: ["January", "February", "March", "April", "May", "June"],
+                labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
                 datasets: [
                     {
                     data: [
@@ -111,20 +111,17 @@ const Stats = () => {
                     stroke: "#ffa726"
                 }
                 }}
-                bezier
+                
                 style={{
                 marginVertical: 8,
                 borderRadius: 16
                 }}
             />
 
-            <Input w="100%" size={5} color="muted.400" 
-                   onChangeText={handleChange} placeholder="Weight"/>
-            <Text style={{color: 'black', height: 50}}>{text}</Text>
-
             <Input size={5} color="muted.200" onChangeText={storeData} placeholder="store Data"/>
             <Button onPress={getData} >Get Data</Button>
             <Text style={{color: 'black', height: 40}}>{text}</Text>
+            
             <View>
                 <Button onPress={showDatepicker} placeholder="ShowDatePicker">ShowDatePicker</Button>
                 <Button  onPress={showTimepicker} placeholder="showTimePicker">ShowTimePicker</Button>
@@ -147,3 +144,6 @@ const Stats = () => {
 };
 
 export default Stats;
+
+
+
