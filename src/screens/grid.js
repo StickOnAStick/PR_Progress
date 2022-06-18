@@ -11,7 +11,7 @@ const Grid = () => {
 
     return (
             
-        <Box bg={useColorModeValue(colors.lightPrimary[100], colors.darkPrimary[100])} h="full" safeArea>
+        <Box bg={useColorModeValue(colors.bgLight[100], colors.bgDark[100])} h="full" safeArea>
             
             <Center>
                 <Button alignSelf="center" size="md" onPress={toggleColorMode} variant="solid">

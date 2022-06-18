@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import DateTimePicker from '@react-native-community/datetimepicker';
 
+
 const Stats = () => {
     //Storage
     
@@ -72,74 +73,79 @@ const Stats = () => {
    
 
     return(
-        <Box bg={useColorModeValue(colors.lightPrimary[100], colors.darkPrimary[100])} h="full" safeArea>
-            <Text _dark={{colors: '#000' }} pt="3" fontWeight="black" fontSize="2xl">This is the stats menu</Text>
-            <BarChart
-                data={{
-                labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-                datasets: [
-                    {
-                    data: [
-                        Math.random() * 100,
-                        Math.random() * 100,
-                        Math.random() * 100,
-                        Math.random() * 100,
-                        Math.random() * 100,
-                        Math.random() * 100
-                    ]
-                    }
-                ]
-                }}
-                width={Dimensions.get("window").width} // from react-native
-                height={220}
-                yAxisLabel="$"
-                yAxisSuffix="k"
-                yAxisInterval={1} // optional, defaults to 1
-                chartConfig={{
-                backgroundColor: "#e26a00",
-                backgroundGradientFrom: "#fb8c00",
-                backgroundGradientTo: "#ffa726",
-                decimalPlaces: 2, // optional, defaults to 2dp
-                color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
-                labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
-                style: {
-                    borderRadius: 16
-                },
-                propsForDots: {
-                    r: "6",
-                    strokeWidth: "2",
-                    stroke: "#ffa726"
-                }
-                }}
-                
-                style={{
-                marginVertical: 8,
-                borderRadius: 16
-                }}
-            />
 
-            <Input size={5} color="muted.200" onChangeText={storeData} placeholder="store Data"/>
-            <Button onPress={getData} >Get Data</Button>
-            <Text style={{color: 'black', height: 40}}>{text}</Text>
+        <Box bg={useColorModeValue(colors.bgLight[100], colors.bgDark[100])} h="full" safeArea>
             
-            <View>
-                <Button onPress={showDatepicker} placeholder="ShowDatePicker">ShowDatePicker</Button>
-                <Button  onPress={showTimepicker} placeholder="showTimePicker">ShowTimePicker</Button>
-
-                {show && (
-                    <DateTimePicker 
-                        testID="dateTimePicker"
-                        value={date}
-                        mode={mode}
-                        is24Hour={true}
-                        display="default"
-                        onChange={onChange}
-                    />
-                )}
-                
-            </View>
 
         </Box>
+        // <Box bg={useColorModeValue(colors.lightPrimary[100], colors.darkPrimary[100])} h="full" safeArea>
+        //     <Text _dark={{colors: '#000' }} pt="3" fontWeight="black" fontSize="2xl">This is the stats menu</Text>
+        //     <BarChart
+        //         data={{
+        //         labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        //         datasets: [
+        //             {
+        //             data: [
+        //                 Math.random() * 100,
+        //                 Math.random() * 100,
+        //                 Math.random() * 100,
+        //                 Math.random() * 100,
+        //                 Math.random() * 100,
+        //                 Math.random() * 100
+        //             ]
+        //             }
+        //         ]
+        //         }}
+        //         width={Dimensions.get("window").width} // from react-native
+        //         height={220}
+        //         yAxisLabel="$"
+        //         yAxisSuffix="k"
+        //         yAxisInterval={1} // optional, defaults to 1
+        //         chartConfig={{
+        //         backgroundColor: "#e26a00",
+        //         backgroundGradientFrom: "#fb8c00",
+        //         backgroundGradientTo: "#ffa726",
+        //         decimalPlaces: 2, // optional, defaults to 2dp
+        //         color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
+        //         labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
+        //         style: {
+        //             borderRadius: 16
+        //         },
+        //         propsForDots: {
+        //             r: "6",
+        //             strokeWidth: "2",
+        //             stroke: "#ffa726"
+        //         }
+        //         }}
+                
+        //         style={{
+        //         marginVertical: 8,
+        //         borderRadius: 16
+        //         }}
+        //     />
+
+        //     <Input size={5} color="muted.200" onChangeText={storeData} placeholder="store Data"/>
+        //     <Button onPress={getData} >Get Data</Button>
+        //     <Text style={{color: 'black', height: 40}}>{text}</Text>
+            
+        //     <View>
+        //         <Button onPress={showDatepicker} placeholder="ShowDatePicker">ShowDatePicker</Button>
+        //         <Button  onPress={showTimepicker} placeholder="showTimePicker">ShowTimePicker</Button>
+
+        //         {show && (
+        //             <DateTimePicker 
+        //                 testID="dateTimePicker"
+        //                 value={date}
+        //                 mode={mode}
+        //                 is24Hour={true}
+        //                 display="default"
+        //                 onChange={onChange}
+        //             />
+        //         )}
+                
+        //     </View>
+
+        // </Box>
     );
 };
 

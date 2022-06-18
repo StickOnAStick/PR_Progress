@@ -11,7 +11,9 @@ const TabBar = ({state, descriptors, navigation }) => {
 
     return (
         
-          <Flex direction='row' bg={useColorModeValue(colors.darkPrimary[100], colors.lightPrimary[100])} rounded="xl" alignItems="center"  h="12" bottom="10" left={10} right={10} position="absolute" > 
+          <Flex direction='row' bg={useColorModeValue(colors.bgLight[1000], colors.bgDark[50])} 
+                rounded="xl" alignItems="center"  h="12" bottom="10" left={10} right={10} 
+                position="absolute" borderWidth={2} borderColor={useColorModeValue(colors.brdLight[100], colors.brdDark[100])}> 
               
               {state.routes.map((route, index) => {
                   const { options } = descriptors[route.key];
@@ -25,24 +27,22 @@ const TabBar = ({state, descriptors, navigation }) => {
                   const isFocused = state.index === index;
           
                   const onPress = () => {
-                  const event = navigation.emit({
-                      type: 'tabPress',
-                      target: route.key,
-                  });
-          
-                  if (!isFocused && !event.defaultPrevented) {
-                      navigation.navigate(route.name);
-                  }
+                    const event = navigation.emit({
+                        type: 'tabPress',
+                        target: route.key,
+                    });
+            
+                    if (!isFocused && !event.defaultPrevented) {
+                        navigation.navigate(route.name);
+                    }
                   };
           
                   const onLongPress = () => {
-                  navigation.emit({
-                      type: 'tabLongPress',
-                      target: route.key,
-                  });
+                    navigation.emit({
+                        type: 'tabLongPress',
+                        target: route.key,
+                    });
                   };
-
-                  
 
                   let tabForDisplay = tabs.find( (object) => object.name === route.name );
                   
@@ -72,7 +72,7 @@ const TabBar = ({state, descriptors, navigation }) => {
 const tabs = [ //Tab Names must be EXACTLY the same as screen name
   {
     name: 'Home',
-    activeIcon: <MaterialIcon name="notebook-edit" color="#fff" size={25} style={{ backgroundColor: '#875ffb', 
+    activeIcon: <MaterialIcon name="notebook-edit" color="#fff" size={25} style={{ backgroundColor: "#fa1e1e", 
                                                                       height: '75%', aspectRatio: 1, 
                                                                       borderRadius: 100, textAlign: 'center', 
                                                                       textAlignVertical: 'center' }}/>,
@@ -80,7 +80,7 @@ const tabs = [ //Tab Names must be EXACTLY the same as screen name
   },
   {
     name: 'Grid',
-    activeIcon: <MaterialIcon name="view-grid" color="#fff" size={25} style={{ backgroundColor: '#875ffb', 
+    activeIcon: <MaterialIcon name="view-grid" color="#fff" size={25} style={{ backgroundColor: "#fa1e1e", 
                                                                      height: '75%', aspectRatio: 1, 
                                                                      borderRadius: 100, textAlign: 'center', 
                                                                      textAlignVertical: 'center' }}/>,
@@ -88,7 +88,7 @@ const tabs = [ //Tab Names must be EXACTLY the same as screen name
   },
   {
     name: 'Stats',
-    activeIcon: <EntypoIcon name="line-graph" color="#fff" size={27} style={{ backgroundColor: '#875ffb', 
+    activeIcon: <EntypoIcon name="line-graph" color="#fff" size={27} style={{ backgroundColor: "#fa1e1e", 
                                                                     height: '75%', aspectRatio: 1, 
                                                                     borderRadius: 100, textAlign: 'center', 
                                                                     textAlignVertical: 'center' }}/>,
@@ -96,7 +96,7 @@ const tabs = [ //Tab Names must be EXACTLY the same as screen name
   },
   {
     name: 'Notification',
-    activeIcon: <Icon name="bell" color="#fff" size={25} style={{ backgroundColor: '#875ffb', 
+    activeIcon: <Icon name="bell" color="#fff" size={25} style={{ backgroundColor: "#fa1e1e", 
                                                                   height: '75%', aspectRatio: 1, 
                                                                   borderRadius: 100, textAlign: 'center', 
                                                                   textAlignVertical: 'center' }}/>,
@@ -104,7 +104,7 @@ const tabs = [ //Tab Names must be EXACTLY the same as screen name
   },
   {
     name: 'Profile',
-    activeIcon: <Icon name="user" color="#fff" size={25} style={{ backgroundColor: '#875ffb', 
+    activeIcon: <Icon name="user" color="#fff" size={25} style={{ backgroundColor: "#fa1e1e", 
                                                                   height: '75%', aspectRatio: 1, 
                                                                   borderRadius: 100, textAlign: 'center', 
                                                                   textAlignVertical: 'center' }} />,
