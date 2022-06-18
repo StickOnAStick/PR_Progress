@@ -10,10 +10,11 @@ import navigatorTheme from './src/Theme/navigatorTheme.js';
 import { useColorMode } from 'native-base';
 //custom components
 import TabBar from './src/components/Navigation/TabBar.js';
+import HeaderBar from './src/components/Navigation/HeaderBar.js';
 //Screens
 import Home from './src/screens/home.js';
 import Grid from './src/screens/grid.js';
-import Stats from './src/screens/stats.js'
+import Stats from './src/screens/stats.js';
 
 
 
@@ -30,7 +31,7 @@ export default function App() {
         <Tab.Navigator screenOptions={{ headerShown: false,}} tabBar={props => <TabBar {...props}/> }>
           <Tab.Screen name="Home" component={Home}/>
           <Tab.Screen name="Grid" component={Grid}/>
-          <Tab.Screen name="Stats" component={Stats}/>
+          <Tab.Screen name="Stats" component={Stats} />
         </Tab.Navigator>
       </NavigationContainer>
     </NativeBaseProvider>

@@ -11,9 +11,10 @@ const TabBar = ({state, descriptors, navigation }) => {
 
     return (
         
-          <Flex direction='row' bg={useColorModeValue(colors.bgLight[1000], colors.bgDark[50])} 
+          <Flex direction='row' bg={useColorModeValue(colors.bgLight[100], colors.bgDark[50])} 
                 rounded="xl" alignItems="center"  h="12" bottom="10" left={10} right={10} 
-                position="absolute" borderWidth={2} borderColor={useColorModeValue(colors.brdLight[100], colors.brdDark[100])}> 
+                position="absolute" borderWidth={2} zIndex={5}
+                borderColor={useColorModeValue(colors.brdLight[100], colors.brdDark[100])}> 
               
               {state.routes.map((route, index) => {
                   const { options } = descriptors[route.key];

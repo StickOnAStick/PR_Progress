@@ -1,8 +1,11 @@
-import { View } from 'react-native';
+
+import { useColorModeValue, useTheme, Box } from 'native-base';
 
 const Home = () => {
+    const {colors} = useTheme();
+
     return(
-        <View></View>
+        <Box h="full" bg={useColorModeValue(colors.bgLight[100], colors.bgDark[100])}>This is the header bar</Box>
     );
 };
 
